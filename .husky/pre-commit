@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "🔍 Running Prettier..."
+npx prettier --write .
+
+# Stage the formatted files
+git add -A
+
+echo "🏗️ Running build..."
+yarn build

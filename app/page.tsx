@@ -32,12 +32,14 @@ export default function Home() {
       {/* Hero Section */}
       <div className="bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-black py-16">
         <main className="max-w-7xl mx-auto px-8">
-          <div className="flex flex-row-reverse gap-8">
-            {/* Sidebar */}
-            <TopicsSidebar />
+          <div className="relative">
+            {/* Sidebar - Absolutely positioned */}
+            <div className="absolute -right-56 top-0">
+              <TopicsSidebar />
+            </div>
 
-            {/* Main Content */}
-            <div className="flex-1">
+            {/* Main Content - Centered without flex-row-reverse */}
+            <div className="max-w-4xl mx-auto">
               <div className="text-center space-y-6 mb-12">
                 <div className="flex flex-col items-center gap-4">
                   <Image

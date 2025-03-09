@@ -17,11 +17,39 @@ export async function GET() {
     "documentation",
     "bug",
     "enhancement",
+    "gsoc",
+    "google-summer-of-code",
+    "outreachy",
+    "season-of-docs",
+    "mlh-fellowship",
+    "kde",
+    "fossasia",
+    "codeheat",
+    "linux-kernel",
+    "hyperledger",
+    "girlscript",
+    "hacktoberfest-accepted",
+    "hacktoberfest-beginner",
+    "hacktoberfest-easy",
+    "hacktoberfest-good-first-issue",
+    "hacktoberfest-help-wanted",
+    "hacktoberfest-good-first-issue",
   ];
+
+  // Randomize the search queries array using Fisher-Yates shuffle
+  const shuffledQueries = [...searchQueries];
+  for (let i = shuffledQueries.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffledQueries[i], shuffledQueries[j]] = [
+      shuffledQueries[j],
+      shuffledQueries[i],
+    ];
+  }
 
   try {
     const responses = await Promise.all(
-      searchQueries.map((query) =>
+      // Use the shuffled array instead of the original
+      shuffledQueries.map((query) =>
         fetch(`https://api.github.com/search/topics?q=${query}`, {
           headers: {
             Authorization: `Bearer ${process.env.GITHUB_ACCESS_TOKEN}`,

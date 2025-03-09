@@ -4,6 +4,15 @@ import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
+// Separate the viewport configuration from general metadata
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  // Add any other viewport settings you had before
+};
+
+// Keep other metadata separate
 export const metadata: Metadata = {
   title: "ContributeCore - Find Perfect Open Source Issues",
   description:
@@ -48,11 +57,6 @@ export const metadata: Metadata = {
       "Find and contribute to open source projects that match your skills. Make impactful contributions and grow your developer profile.",
     creator: "@ikuldeepahlawat",
     images: ["https://github.com/imkuldeepahlawat.png"],
-  },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
   },
   robots: {
     index: true,

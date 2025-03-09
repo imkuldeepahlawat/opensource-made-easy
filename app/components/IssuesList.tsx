@@ -69,6 +69,17 @@ export default function IssuesList({ issues = [] }: IssuesListProps) {
                 </span>
               ))}
             </div>
+            <div className="flex flex-wrap gap-2">
+              {issue?.categories?.map((category) => (
+                <span
+                  key={category}
+                  className="px-2 py-1 text-xs rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300"
+                >
+                  {category.charAt(0).toUpperCase() +
+                    category.slice(1).replace("-", " ")}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       ))}

@@ -1,5 +1,8 @@
 import { NextResponse } from "next/server";
 
+import { categorizeIssue } from "@/app/utils/categorizeIssue";
+import { Issue } from "@/app/types";
+
 export async function GET(
   request: Request,
   { params }: { params: { owner: string; repo: string } },
@@ -23,6 +26,14 @@ export async function GET(
       throw new Error("Failed to fetch issues");
     }
 
+    let issues = await response.json();
+
+    // Add categories to each issue
+    issues = issues.map((issue: Issue) => ({
+      ...issue,
+      categories: categorizeIssue(issue),
+    }));
+
     // Get total pages from Link header
     const linkHeader = response.headers.get("link");
     let totalPages = 1;
@@ -39,7 +50,6 @@ export async function GET(
       }
     }
 
-    const issues = await response.json();
     return NextResponse.json({
       issues,
       totalPages,

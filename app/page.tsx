@@ -2,6 +2,7 @@ import SearchForm from "./components/SearchForm";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { HiLightBulb, HiCode, HiUsers } from "react-icons/hi";
 import Image from "next/image";
+import TopicsSidebar from "./components/TopicsSidebar";
 
 function Feature({
   icon: Icon,
@@ -30,120 +31,128 @@ export default function Home() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <div className="bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-black py-16">
-        <main className="max-w-5xl mx-auto px-8">
-          <div className="text-center space-y-6 mb-12">
-            <div className="flex flex-col items-center gap-4">
-              <Image
-                src="https://github.com/imkuldeepahlawat.png"
-                alt="Kuldeep Ahlawat"
-                width={96}
-                height={96}
-                className="rounded-full border-4 border-white dark:border-gray-800 shadow-lg"
-              />
-              <div className="flex items-center justify-center gap-2">
-                <FaGithub className="w-8 h-8" />
-                <h1 className="text-5xl font-bold">ContributeCore</h1>
-              </div>
-              <div className="flex gap-4">
-                <a
-                  href="https://github.com/imkuldeepahlawat"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white transition-colors"
-                >
-                  <FaGithub className="w-6 h-6" />
-                </a>
-                <a
-                  href="https://linkedin.com/in/imkuldeepahlawat"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors"
-                >
-                  <FaLinkedin className="w-6 h-6" />
-                </a>
-                <a
-                  href="https://x.com/ikuldeepahlawat"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-blue-400 dark:text-gray-400 dark:hover:text-blue-300 transition-colors"
-                >
-                  <FaTwitter className="w-6 h-6" />
-                </a>
-              </div>
-            </div>
-            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              Hey! I&apos;m Kuldeep Ahlawat. I built ContributeCore to empower
-              developers in their open source journey. Find the perfect issues,
-              make impactful contributions, and grow your developer profile.
-            </p>
+        <main className="max-w-7xl mx-auto px-8">
+          <div className="flex flex-row-reverse gap-8">
+            {/* Sidebar */}
+            <TopicsSidebar />
 
-            <div className="inline-flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-4 py-2 rounded-full">
-              <span className="relative flex h-3 w-3">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
-              </span>
-              Currently tracking thousands of open source issues
-            </div>
-          </div>
+            {/* Main Content */}
+            <div className="flex-1">
+              <div className="text-center space-y-6 mb-12">
+                <div className="flex flex-col items-center gap-4">
+                  <Image
+                    src="https://github.com/imkuldeepahlawat.png"
+                    alt="Kuldeep Ahlawat"
+                    width={96}
+                    height={96}
+                    className="rounded-full border-4 border-white dark:border-gray-800 shadow-lg"
+                  />
+                  <div className="flex items-center justify-center gap-2">
+                    <FaGithub className="w-8 h-8" />
+                    <h1 className="text-5xl font-bold">ContributeCore</h1>
+                  </div>
+                  <div className="flex gap-4">
+                    <a
+                      href="https://github.com/imkuldeepahlawat"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white transition-colors"
+                    >
+                      <FaGithub className="w-6 h-6" />
+                    </a>
+                    <a
+                      href="https://linkedin.com/in/imkuldeepahlawat"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors"
+                    >
+                      <FaLinkedin className="w-6 h-6" />
+                    </a>
+                    <a
+                      href="https://x.com/ikuldeepahlawat"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-600 hover:text-blue-400 dark:text-gray-400 dark:hover:text-blue-300 transition-colors"
+                    >
+                      <FaTwitter className="w-6 h-6" />
+                    </a>
+                  </div>
+                </div>
+                <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                  Hi! I&apos;m Kuldeep! I built this tool to help you find fun
+                  open source projects to work on - from total newbie to coding
+                  wizard. No more endless GitHub searching, promise!
+                </p>
 
-          <div className="max-w-2xl mx-auto mb-16">
-            <SearchForm />
-          </div>
-
-          {/* Features Grid */}
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
-            <Feature
-              icon={HiLightBulb}
-              title="Find Perfect Issues"
-              description="Discover issues that match your skills and interests, from beginner to advanced levels."
-            />
-            <Feature
-              icon={HiCode}
-              title="Start Contributing"
-              description="Get detailed information about issues and jump straight into coding with direct links to GitHub."
-            />
-            <Feature
-              icon={HiUsers}
-              title="Join Communities"
-              description="Connect with project maintainers and other contributors in the open source community."
-            />
-          </div>
-
-          {/* Value Proposition Section - Replacing Stats */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-            <div className="bg-white dark:bg-gray-800/50 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
-              <div className="flex flex-col items-center gap-2">
-                <HiCode className="w-8 h-8 text-blue-500" />
-                <div className="font-medium">Real-time Updates</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">
-                  Live issue tracking from GitHub
+                <div className="inline-flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-4 py-2 rounded-full">
+                  <span className="relative flex h-3 w-3">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                  </span>
+                  Currently tracking thousands of open source issues
                 </div>
               </div>
-            </div>
-            <div className="bg-white dark:bg-gray-800/50 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
-              <div className="flex flex-col items-center gap-2">
-                <HiLightBulb className="w-8 h-8 text-yellow-500" />
-                <div className="font-medium">Easy to Use</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">
-                  Simple search and filter system
-                </div>
+
+              <div className="max-w-2xl mx-auto mb-16">
+                <SearchForm />
               </div>
-            </div>
-            <div className="bg-white dark:bg-gray-800/50 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
-              <div className="flex flex-col items-center gap-2">
-                <HiUsers className="w-8 h-8 text-green-500" />
-                <div className="font-medium">Community Focused</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">
-                  Connect with maintainers directly
-                </div>
+
+              {/* Features Grid */}
+              <div className="grid md:grid-cols-3 gap-6 mb-12">
+                <Feature
+                  icon={HiLightBulb}
+                  title="Find Perfect Issues"
+                  description="Discover issues that match your skills and interests, from beginner to advanced levels."
+                />
+                <Feature
+                  icon={HiCode}
+                  title="Start Contributing"
+                  description="Get detailed information about issues and jump straight into coding with direct links to GitHub."
+                />
+                <Feature
+                  icon={HiUsers}
+                  title="Join Communities"
+                  description="Connect with project maintainers and other contributors in the open source community."
+                />
               </div>
-            </div>
-            <div className="bg-white dark:bg-gray-800/50 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
-              <div className="flex flex-col items-center gap-2">
-                <FaGithub className="w-8 h-8 text-purple-500" />
-                <div className="font-medium">Open Source</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">
-                  Built for the community
+
+              {/* Value Proposition Section - Replacing Stats */}
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+                <div className="bg-white dark:bg-gray-800/50 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+                  <div className="flex flex-col items-center gap-2">
+                    <HiCode className="w-8 h-8 text-blue-500" />
+                    <div className="font-medium">Real-time Updates</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400">
+                      Live issue tracking from GitHub
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-white dark:bg-gray-800/50 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+                  <div className="flex flex-col items-center gap-2">
+                    <HiLightBulb className="w-8 h-8 text-yellow-500" />
+                    <div className="font-medium">Easy to Use</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400">
+                      Simple search and filter system
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-white dark:bg-gray-800/50 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+                  <div className="flex flex-col items-center gap-2">
+                    <HiUsers className="w-8 h-8 text-green-500" />
+                    <div className="font-medium">Community Focused</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400">
+                      Connect with maintainers directly
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-white dark:bg-gray-800/50 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+                  <div className="flex flex-col items-center gap-2">
+                    <FaGithub className="w-8 h-8 text-purple-500" />
+                    <div className="font-medium">Open Source</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400">
+                      Built for the community
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

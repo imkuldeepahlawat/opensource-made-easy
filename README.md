@@ -34,7 +34,7 @@ ContributeCore is a tool designed to help developers find fun open source projec
 
    ```bash
    git clone https://github.com/imkuldeepahlawat/opensource-made-easy
-   cd contributecore
+   cd opensource-made-easy
    ```
 
 2. Install dependencies:

@@ -176,14 +176,6 @@ export default function Home() {
               >
                 GitHub
               </a>
-              {" · "}
-              <a href="/about" className="hover:underline">
-                About
-              </a>
-              {" · "}
-              <a href="/privacy" className="hover:underline">
-                Privacy
-              </a>
             </p>
           </div>
         </div>
